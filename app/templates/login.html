@@ -1,0 +1,24 @@
+<!-- app/template/login.html -->
+{% extends 'base.html' %}
+{% import 'bootstrap_wtf.html' as wtf %}
+
+{% block app_content %}
+<div class="container mt-3">
+    <div class="welcome-message text-center">
+        <h2>Beginne deine Reise ins Refugium</h2>
+        <p>Tauche ein in einen Ort, wo die Zeit stillsteht, und finde in tiefer Ruhe und Entspannung zu deiner inneren Essenz zurück. Hier im Refugium, wo der Wert des Seins über dem des Habens steht, laden wir dich ein, einen Schritt näher an die Harmonie mit deiner Seele zu treten. Dein Pfad zur Selbstentdeckung beginnt mit einem einfachen Schritt – deiner Anmeldung.</p>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Anmelden</h1>
+            {{ wtf.quick_form(form) }}
+            <br>
+            <p>Neuer User? <a href="{{ url_for('register') }}">Hier registrieren!</a></p>
+            <p>
+                Passwort vergessen?
+                <a href="{{ url_for('reset_password_request') }}">Hier zurücksetzen</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

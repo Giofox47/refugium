@@ -1,0 +1,10 @@
+<!-- templates/success.html -->
+{% extends "base.html" %}
+
+{% block app_content %}
+<div class="container">
+    <h2>Erfolg!</h2>
+    <p>Ihre Buchung wurde erfolgreich vorgenommen.</p>
+    <a href="{{ url_for('index') }}" class="btn btn-primary">Zurück zur Startseite</a>
+</div>
+{% endblock %}

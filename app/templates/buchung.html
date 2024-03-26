@@ -1,0 +1,51 @@
+<!-- templates/buchung.html -->
+{% extends "base.html" %}
+
+{% block app_content %}
+<div class="container mt-3">
+    <h2>Buchung</h2>
+    <p>Bitte füllen Sie das Formular aus, um Ihre Buchung zu tätigen.</p>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            <label for="checkInDate">Check-in Datum</label>
+            <input type="date" id="checkInDate" name="check_in_date" required class="form-control" value="{{ form.check_in_date.data }}">
+        </div>
+        <div class="form-group">
+            <label for="checkOutDate">Check-out Datum</label>
+            <input type="date" id="checkOutDate" name="check_out_date" required class="form-control" value="{{ form.check_out_date.data }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Buchen</button>
+    </form>
+    <hr>
+    <h3>Verfügbare Termine</h3>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Verfügbare Daten</th>
+                <th>Von</th>
+                <th>Bis</th>
+                <th>Status</th>
+                <th>Aktion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for termin in verfuegbare_tage %}
+            <tr class="{{ 'table-danger' if termin.reserved else 'table-success' }}">
+                <td>{{ termin.start_date.strftime('%d.%m.%Y') }}</td>
+                <td>{{ termin.end_date.strftime('%d.%m.%Y') }}</td>
+                <td>{{ 'Reserviert' if termin.reserved else 'Frei' }}</td>
+                <td>
+                    {% if not termin.reserviert %}
+                    <form method="post" action="{{ url_for('reserviere', termin_id=termin.id) }}">
+                        {{ form.hidden_tag() }}
+                        <button type="submit" class="btn btn-primary">Reservieren</button>
+                    </form>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

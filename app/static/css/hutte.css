@@ -1,0 +1,156 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #6a994e; /* Grünton */
+    margin-bottom: 20px;
+    padding: 0 10px; /* Etwas mehr Platz an den Seiten */
+}
+
+.navbar-nav {
+    list-style: none; /* Entfernt die Listenpunkte */
+    padding-left: 0; /* Entfernt den Standard-Linker-Padding der Liste */
+}
+.navbar-nav > li {
+    display: inline-block; /* Zeigt Listenelemente nebeneinander an */
+}
+
+.navbar-brand {
+    color: #000000;
+    padding: 15px 10px; /* Vertikaler und horizontaler Abstand wie bei den Nav-Links */
+}    
+
+/* Stil für Navigationslinks */
+.nav-link {
+    border: 2px solid #fff; /* Weißer Rand um die Links */
+    border-radius: 20px; /* Abgerundete Ecken */
+    padding: 5px 15px; /* Vertikaler und horizontaler Innenabstand */
+    margin-right: 10px; /* Abstand zwischen den Links */
+    transition: background-color 0.3s, color 0.3s; /* Weiche Übergänge */
+}
+
+.nav-link:hover, .nav-link:focus {
+    background-color: #fff; /* Hintergrundfarbe beim Hover/Fokus */
+    color: #6a994e; /* Textfarbe beim Hover/Fokus */
+    text-decoration: none; /* Entfernt die Unterstreichung beim Hover/Fokus */
+}
+
+/* Stil für den aktiven Navigationslink */
+.nav-link.active {
+    background-color: #82c091; /* Grünton für aktiven Link */
+    color: #fff; /* Weiße Schrift für aktiven Link */
+}
+
+
+.nav-link.btn {
+    margin: 0 10px; /* Seitenabstand zwischen den Buttons */
+    border: 0; /* Entfernen Sie die Border, wenn Sie keine wollen */
+}
+
+.nav-link.btn:hover {
+    background-color: #558776; /* Hintergrundfarbe beim Hover */
+    color: #68b979; /* Textfarbe beim Hover */
+}
+
+/* Versteckt den navbar-toggle Button */
+.navbar-toggle {
+    display: none;
+}
+
+/* Stil-Anpassungen für den navbar-toggle Button */
+.navbar-toggle {
+    border-color: #82c091; /* Anpassung der Randfarbe */
+}
+
+.navbar-toggle .icon-bar {
+    background-color: #6a994e; /* Anpassung der Farbe der Icon-Bar */
+}
+
+
+.container {
+    background-color: #fff; /* Weißer Hintergrund für den Container */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Schatten für einen "schwebenden" Effekt */
+}
+
+.alert {
+    background-color: #ffcccb; /* Roter Hintergrund für Warnmeldungen */
+    color: #333; /* Dunkle Schrift für Warnmeldungen */
+}
+
+.alert-custom {
+    background-color: #82c091; /* Helle Grüntöne für Alerts */
+    color: #ffffff; /* Weiße Schrift für bessere Lesbarkeit */
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #82c091; /* Helle Grüntöne für Buttons */
+    border-color: #558776; /* Dunklerer Grünton für Button-Ränder */
+}
+
+.btn-primary:hover {
+    background-color: #558776; /* Dunklerer Grünton beim Hover für Buttons */
+}
+
+h2 {
+    color: #6a994e; /* Grünton für Überschriften */
+}
+
+/* Hier ist der wichtige Teil für Ihren Kontrast */
+.welcome-message {
+    background-color: #e7e7e7; /* Leicht grauer Hintergrund für den Willkommensnachricht-Container */
+    color: #333; /* Dunkle Schrift für bessere Lesbarkeit */
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.welcome-message h1,
+.welcome-message p {
+    color: #333; /* Dunkle Farbe für Kontrast */
+}
+
+
+/* Stellen Sie sicher, dass alle Texte, die weiße Schrift haben sollen, einen dunklen Hintergrund haben */
+.carousel-control .glyphicon,
+.carousel-control .sr-only {
+    color: #333; /* Dunkle Symbole und Texte für den Karussell-Steuerung */
+}
+
+/* Zusätzliche Stile für das Karussell nach Bedarf */
+.carousel-inner .item {
+    text-align: center; /* Zentriert das Bild im Karussell */
+}
+
+/* Stil für den Call to Action Bereich */
+.booking-cta {
+    background-color: #6a994e; /* Grünton für den Hintergrund */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.booking-cta p {
+    color: #fff; /* Weiße Schrift für die Texte im Call to Action Bereich */
+}
+
+.booking-cta a.btn-primary {
+    background-color: #fff; /* Weißer Hintergrund für den "Jetzt buchen" Button */
+    color: #6a994e; /* Grüne Schrift für den "Jetzt buchen" Button */
+    border-color: #fff; /* Weißer Rand für den "Jetzt buchen" Button */
+}
+
+.booking-cta a.btn-primary:hover {
+    background-color: #6a994e; /* Grünton für den "Jetzt buchen" Button beim Hover */
+    color: #fff; /* Weiße Schrift für den "Jetzt buchen" Button beim Hover */
+    border-color: #82c091; /* Hellerer Grünton für den Rand beim Hover */
+}

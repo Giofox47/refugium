@@ -1,0 +1,65 @@
+<!-- app/templates/index.html -->
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <div class="welcome-message text-center">
+        <h2>Willkommen in unserem Refugium</h2>
+        <p>Willkommen in unserem Refugium, einem Portal in eine Welt, wo Zeit und Raum sich in der Ewigkeit verlieren. Entdecken Sie die Ruhe und die unendliche Schönheit unserer exklusiven Steinhütte, eingebettet in das Herz der Natur, ein Spiegelbild des Kosmos selbst.</p>
+        <p>Diese Steinhütte ist nicht nur ein Ort, sondern ein Zustand des Seins, ein Flüstern der Erde, das in den Mauern aus uraltem Stein widerhallt. Jeder Stein, sorgfältig in Harmonie mit dem Lied des Universums platziert, spricht von der untrennbaren Verbindung zwischen dem Menschlichen und dem Göttlichen.</p>
+        <p>In der Stille dieses heiligen Raumes können Sie die leisen Gesänge der Natur hören, die Melodien, die das Band zwischen dem Sichtbaren und dem Unsichtbaren weben. Es ist ein Ort, wo die Seele frei fliegen kann, durch die Sterne streift und in den tiefen Gewässern der Existenz taucht.</p>
+        <p>Die Hütte, umgeben von der unberührten Schönheit der Natur, ist ein lebendiges Atelier, in dem Sie eingeladen sind, die Kunst des Seins zu malen, mit Farben, die aus der Tiefe des Universums stammen. Hier, weit entfernt vom Lärm des Alltags, finden Sie einen Rückzugsort für Meditation und Selbstreflexion, einen Ort, wo Sie die Einheit mit allem, was existiert, erfahren können.</p>
+        <p>Wir laden Sie ein, dieses Wochenende zu verbringen in einem Heiligtum, das nicht nur ein Zuhause ist, sondern ein Tempel, in dem jeder Atemzug eine Ode an das Leben ist, und jede Sekunde eine Ewigkeit in sich trägt.</p>
+        <p>Buchen Sie Ihr Erlebnis jetzt und treten Sie ein in die Unendlichkeit, umarmt von der Stille, beleuchtet von den Sternen, in unserem mystischen Refugium, wo das Universum selbst Sie willkommen heisst.</p>
+    </div>
+
+    <!-- Bildkarussell, um die Hütte und Umgebung zu präsentieren -->
+    <div id="hutteCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#hutteCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#hutteCarousel" data-slide-to="1"></li>
+            <li data-target="#hutteCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="{{ url_for('static', filename='images/steinhutte1.webp') }}" alt="Blick auf die Steinhütte rechts">
+            </div>
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/steinhutte2.webp') }}" alt="Blick auf die Steinhütte vorne">
+            </div>
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/steinhutte3.webp') }}" alt="Umgebung der Steinhütte">
+            </div>
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/steinhutte4.webp') }}" alt="Umgebung der Steinhütte vorn">
+            </div>
+            <div class="item">
+                <img src="{{ url_for('static', filename='images/steinhutte5.webp') }}" alt="Umgebung der Steinhütte vorne links">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#hutteCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Vorheriges</span>
+        </a>
+        <a class="right carousel-control" href="#hutteCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Nächstes</span>
+        </a>
+    </div>
+
+    <!-- Zusatzinformationen für Buchungen -->
+    <div class="booking-cta text-center">
+        <div>
+        </div>
+        <p>Möchten Sie ein unvergessliches Wochenende erleben?</p>
+        <div>
+        </div>
+        <a href="{{ url_for('buchung') }}" class="btn btn-primary">Jetzt buchen</a>
+    </div>
+    
+{% endblock %}

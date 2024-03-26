@@ -1,0 +1,35 @@
+<!-- app/template/user.html -->
+
+{% extends "base.html" %}
+{% block app_content %}
+<div class="user-profile">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>{{ user.username }}</h1>
+            <p>Email: {{ user.email }}</p>
+            {% if user.last_seen %}<p>Zuletzt gesehen am: {{ user.last_seen.strftime('%Y-%m-%d %H:%M:%S') }}</p>{% endif %}
+            <p><a href="{{ url_for('edit_profile') }}">Profil bearbeiten</a></p>
+        </div>
+    </div>
+    <hr>
+    <h2>Meine Buchungen</h2>
+    {% if user.buchungen.count() > 0 %}
+    <ul class="list-unstyled">
+        {% for buchung in user.buchungen %}
+        <li>
+            <strong>Check-in:</strong> {{ buchung.check_in.strftime('%Y-%m-%d') }}<br>
+            <strong>Check-out:</strong> {{ buchung.check_out.strftime('%Y-%m-%d') }}<br>
+            <!-- Beginn der Formularanpassung -->
+            <form action="{{ url_for('storniere_buchung', buchung_id=buchung.id) }}" method="post">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <button type="submit" class="btn btn-warning">Buchung stornieren</button>
+            </form>
+            <!-- Ende der Formularanpassung -->
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Sie haben noch keine Buchungen vorgenommen.</p>
+    {% endif %}
+</div>
+{% endblock %}
